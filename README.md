@@ -1,6 +1,7 @@
 ## Configure a openvpn instance
 
-1. Put login credentials in vpn/login.conf 
+1. Put login credentials in `vpn/login.conf`.  Put the _username_ on the first line, 
+   and the _password_ on the second line.
 
 2. Build a local instance with the credentials built in, using ./BUILD, or just
 
@@ -24,6 +25,8 @@ or just removed and recreated with the above command or `./RUN`.
 
     docker exec -ti vpn curl ifconfig.me
   
+5. Optional - once you have built your docker image, you do not have to 
+   keep this git repository around.
 
 ## Usage example
 
