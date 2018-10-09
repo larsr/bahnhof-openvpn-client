@@ -23,7 +23,7 @@ or just removed and recreated with the above command or `./RUN`.
 
 4. If you want to, check the IP address it got with
 
-    docker exec -ti vpn curl ifconfig.me
+        docker exec -ti vpn curl ifconfig.me
   
 5. Optional - once you have built your docker image, you do not have to 
    keep this git repository around.
