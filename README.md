@@ -1,9 +1,12 @@
 ## Configure a openvpn instance
 
-Put login credentials in vpn/login.conf and build a local instance with
-the credentials built in, using ./BUILD.
+1. Put login credentials in vpn/login.conf 
 
-Run it with ./RUN or which does
+2. Build a local instance with the credentials built in, using ./BUILD, or just
+
+    docker build -t bahnhof .
+
+3. Run it with ./RUN,  which does
 
     docker run \
       -it \
@@ -14,9 +17,10 @@ Run it with ./RUN or which does
       bahnhof
 
 
-If it is stopped it can be restarted with `docker start vpn`.
+If the instance is stopped it can be restarted with `docker start vpn`,
+or just removed and recreated with the above command or `./RUN`.
 
-Check the ip address it got with
+4. If you want to, check the IP address it got with
 
     docker exec -ti vpn curl ifconfig.me
   
