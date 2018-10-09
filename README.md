@@ -5,17 +5,17 @@
 
 2. Build a local instance with the credentials built in, using ./BUILD, or just
 
-        docker build -t bahnhof .
+       docker build -t bahnhof .
 
 3. Run it with ./RUN,  which does
 
-        docker run \
-          -it \
-          --cap-add=NET_ADMIN \
-          --device /dev/net/tun \
-          --name vpn \
-          --dns 8.8.8.8 \
-          bahnhof
+       docker run \
+         -it \
+         --cap-add=NET_ADMIN \
+         --device /dev/net/tun \
+         --name vpn \
+         --dns 8.8.8.8 \
+         bahnhof
 
 
 If the instance is stopped it can be restarted with `docker start vpn`,
@@ -23,7 +23,7 @@ or just removed and recreated with the above command or `./RUN`.
 
 4. If you want to, check the IP address it got with
 
-        docker exec -ti vpn curl ifconfig.me
+       docker exec -ti vpn curl ifconfig.me
   
 5. Optional - once you have built your docker image, you do not have to 
    keep this git repository around.
