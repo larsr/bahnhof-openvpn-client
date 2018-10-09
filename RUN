@@ -1,0 +1,22 @@
+if [ "$(wc -l vpn/login.conf | awk '{print $1}')" != 2 ]; then
+  echo "Put username and password on lines 1 and 2"
+  echo "in vpn/login.conf and run ./BUILD";
+else
+
+echo "detach with ctrl-p ctrl-q"
+
+docker rm vpn
+
+docker run \
+  -it \
+  --cap-add=NET_ADMIN \
+  --device /dev/net/tun \
+  --name vpn \
+  --dns 8.8.8.8 \
+  bahnhof
+
+docker exec -ti vpn curl ifconfig.me
+
+fi
+
+
